@@ -1,0 +1,181 @@
+Tabelle Version 2.0
+
+[Layout]
+Breite=210
+Höhe=297
+Hochformat=1
+Links=25
+Rechts=15
+Oben=25
+Unten=25
+
+Datum=1
+Seitenzahlen=1
+Laufende Nummer=1
+Gitternetzlinien=1
+Dateiname in Fußzeile=1
+Gleiche Felder untereinander=1
+
+[Datenbank]
+Container=COMPersonen
+
+[Gruppierung]
+Gruppenwechsel=
+Gruppenüberschrift=
+Gruppenfuß=
+Seitenwechsel=0
+lfdGruppenwechsel=0
+
+[SubFilter] 82
+COMAusbildung_Schüler (Nr)=[Von] <= Input(0) && ([Bis] == "" || [Bis] >= Input(0))
+Welche=1
+Wieviele=0
+Haupt=4
+
+[SubFilter] 67
+COMPBereiche=([Bis] = "" || [Bis] >= Input(0)) && [Von] <= Input(0)
+Welche=1
+Wieviele=0
+Haupt=4
+
+[SubFilter] 44
+COMPInstrumente=[Instrument (Nr).Nummer] <20
+Welche=1
+Wieviele=0
+Haupt=4
+
+[SubFilter] 137
+COMPersonen=EingabeSuchen("Datum","Zu welchem Stichtag (TT.MM.JJJJ)?",0,"","") && IstStatus(Input(0),1) && IstBereich(Input(0),2,3,4,8,9)
+Welche=0
+Wieviele=0
+Haupt=0
+
+[Feld]
+Name=Name
+NeuName=Name
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=Vorname
+NeuName=Vorname
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=COMAusbildung_Schüler (Nr).Ausbilder (Nr).Name
+NeuName=Stimmbildner(in)
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=COMAusbildung_Schüler (Nr).Wochentag (Nr).Wochentag
+NeuName=Wochentag
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=COMAusbildung_Schüler (Nr).Uhrzeit
+NeuName=Uhrzeit
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=COMAusbildung_Schüler (Nr).Unterrichtsort (Nr).Unterrichtsort
+NeuName=Raum
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=COMPInstrumente.Instrument (Nr).Instrument
+NeuName=Stimme
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Feld]
+Name=COMPBereiche.Bereich (Nr).Bereich
+NeuName=Bereich
+Unterschrift=
+Linksbündig=1
+Ausblenden=1
+Summe=0
+Gruppensumme=0
+Währung=0
+WährungNull=0
+Breite=0
+Leer=
+
+[Sortieren] 148
+COMAusbildung_Schüler (Nr).Wochentag (Nr).Nummer	H
+COMAusbildung_Schüler (Nr).Ausbilder (Nr).Name	H
+COMAusbildung_Schüler (Nr).Uhrzeit	H
+Name	H
+
+[Schriftart]
+Name=Arial
+Größe=10
+Farbe=-1
+
+[Überschrift]
+"Gesamtliste Stimmbildung (Vorlage für Übersichtsplan)"
+
+[Hauptüberschrift]
+Vereinsname()
+
+[Hilfe] 551
+Enthält alle Daten des aktuellen Stimmbildungsplans zu dem gewählten Datum.
+
+Diese Abfrage wird verwendet, um mit Hilfe des Programms "Stimmbildungsplan-Generator" (zu finden im Ordner J:\Vereine\Ulmer Spatzen\13 Stimmbildung\Stimmbildungs-Plan) den Stimmbildungs-Übersichtsplan zu erstellen.
+
+Zu diesem Zweck bitte diese Abfrage mit Klick auf den "Zwischenablage"-Button starten und dann das Programm "Stimmbildungsplan-Generator" aufrufen (Doppelklick).
+
+Das Programm erstellt dann eine Excel-Datei im o. g. Ordner, die den Stibi-Plan enthält.
